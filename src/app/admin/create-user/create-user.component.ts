@@ -29,9 +29,11 @@ export class CreateUserComponent implements OnInit {
       },
       err => console.log(err)
     );
+    this.newUser.business = null;
   }
 
   createUser() {
+    this.newUser.business = null;
     this._auth.registerUser(this.newUser)
     .subscribe(
       res =>{ 

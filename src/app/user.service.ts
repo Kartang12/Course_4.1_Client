@@ -27,7 +27,7 @@ export class UserService {
   }
 
   updateUser(name, user:UserData){
-    const body = { name: user.Name, role: user.Role }
+    const body = { name: user.Name, role: user.Role, business: user.BusinessType }
     return this.http.put<HttpResponseBase>(this._updateUserUrl + name, body)
   }
 

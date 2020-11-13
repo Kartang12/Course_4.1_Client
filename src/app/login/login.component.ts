@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 
 export class LoginComponent implements OnInit {
 
-  route:String = "/Posts/posts"
+  route:String = "/login"
   loginUserData = {
     email: "",
     password: ""
@@ -27,14 +27,13 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('token', res.token)
         localStorage.setItem('role', res.role)
         localStorage.setItem('name', this.loginUserData.email)
-        if(res.role == "Poster")
-          this.route = "/Poster/"
+        if(res.role == "User")
+          this.route = "/home/"
         if(res.role == "Admin")
-          this.route = "/Admin/"
+          this.route = "/Admin/CreateUser"
           this.router.navigate([this.route])
       },
       err => console.log(err)
     )
   }
-
 }

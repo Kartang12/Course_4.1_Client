@@ -14,7 +14,7 @@ export class AdminGuard implements CanActivate {
     if(this._authService.isAdmin())
       return true
     else{
-      this._router.navigate(['/Posts/login'])
+      this._router.navigate(['/login'])
       return false
     }
   }
